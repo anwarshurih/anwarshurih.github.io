@@ -164,6 +164,28 @@ section h2 {
   font-size: 0.8rem;
 }
 
+/* ---- education ---- */
+
+.timeline .item {
+  max-width: 700px;
+  padding-left: 20px;
+  border-left: 3px solid var(--accent);
+}
+
+.timeline h3 {
+  margin: 0;
+}
+
+.timeline .where {
+  margin: 4px 0 8px;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.timeline p {
+  color: var(--muted);
+}
+
 footer {
   padding: 30px 8%;
   color: var(--muted);
