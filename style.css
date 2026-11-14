@@ -5,9 +5,24 @@
 :root {
   --bg: #111418;
   --card: #1a1f26;
+  --border: #262d36;
+  --tag: #24303d;
+  --nav: rgba(17, 20, 24, 0.9);
   --text: #e8e8e8;
   --muted: #9aa3ad;
   --accent: #4f9cf9;
+}
+
+/* light theme, switched on by the button in the nav */
+:root.light {
+  --bg: #f7f8fa;
+  --card: #ffffff;
+  --border: #e1e5ea;
+  --tag: #e6f0fe;
+  --nav: rgba(247, 248, 250, 0.9);
+  --text: #1b1f24;
+  --muted: #5a6470;
+  --accent: #1f6fd8;
 }
 
 html {
@@ -36,7 +51,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 16px 8%;
-  background: rgba(17, 20, 24, 0.9);
+  background: var(--nav);
   backdrop-filter: blur(6px);
   z-index: 10;
 }
@@ -53,6 +68,17 @@ nav .links a {
 
 nav .links a:hover {
   color: var(--text);
+}
+
+.theme-toggle {
+  margin-left: 20px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: none;
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 /* ---- hero ---- */
@@ -133,7 +159,7 @@ section h2 {
   padding: 24px;
   border-radius: 10px;
   background: var(--card);
-  border: 1px solid #262d36;
+  border: 1px solid var(--border);
   transition: transform 0.2s;
 }
 
@@ -159,7 +185,7 @@ section h2 {
   margin: 0 6px 6px 0;
   padding: 2px 10px;
   border-radius: 20px;
-  background: #24303d;
+  background: var(--tag);
   color: var(--accent);
   font-size: 0.8rem;
 }
@@ -190,7 +216,7 @@ footer {
   padding: 30px 8%;
   color: var(--muted);
   font-size: 0.9rem;
-  border-top: 1px solid #262d36;
+  border-top: 1px solid var(--border);
 }
 
 /* ---- phones ---- */

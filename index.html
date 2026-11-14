@@ -15,6 +15,16 @@
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
+  <!-- set the theme before the page draws so it doesn't flash -->
+  <script>
+    try {
+      const saved = localStorage.getItem('theme');
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (saved === 'light' || (!saved && prefersLight)) {
+        document.documentElement.classList.add('light');
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
   <nav>
@@ -24,6 +34,7 @@
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Switch light/dark mode">&#9790;</button>
     </div>
   </nav>
 
@@ -111,5 +122,6 @@
   <footer>
     <p>&copy; 2026 Anwar Shurih &middot; <a href="https://github.com/anwarshurih/anwarshurih.github.io">View source</a></p>
   </footer>
+  <script src="theme.js"></script>
 </body>
 </html>
